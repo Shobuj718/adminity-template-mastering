@@ -29,7 +29,7 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('admin') }}/files/assets/css/style.css">
 <link rel="stylesheet" type="text/css" href="{{ asset('admin') }}/files/assets/css/jquery.mCustomScrollbar.css">
 
-@yield('head-section')
+@yield('header-section')
 
 @yield('style-section')
 

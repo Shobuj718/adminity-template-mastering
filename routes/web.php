@@ -20,3 +20,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group(['middleware' => 'auth', 'prefix' => 'commitee'],function(){
+	Route::get('/all', 'CommiteeController@index');
+});
+
+Route::group(['middleware' => 'auth', 'prefix' => 'aboutus'], function(){
+	Route::get('/add', 'AboutUsController@tno');
+	Route::get('/presidentmessages', 'AboutUsController@president');
+});
