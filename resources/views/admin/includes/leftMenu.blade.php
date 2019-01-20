@@ -66,19 +66,19 @@
 		<ul class="pcoded-submenu">
 			
 			<li class="pcoded-hasmenu ">
-				<a href="{{ url('/aboutus/add') }}">
+				<a href="javascript:void(0)">
 					<span class="pcoded-mtext">TNO Message</span>
 				</a>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{url('/tno/create')}}">
 							<span class="pcoded-mtext">Add TNO Message</span>
 						</a>
 					</li>
 				</ul>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('/tno') }}">
 							<span class="pcoded-mtext">All TNO Message</span>
 						</a>
 					</li>
@@ -486,7 +486,39 @@
 </ul>
 
 
+	
+<ul class="pcoded-item pcoded-left-item">
+	<li class="pcoded-hasmenu ">
+		<a href="javascript:void(0)">
+			<span class="pcoded-micon"><i class="feather icon-list"></i></span>
+			<span class="pcoded-mtext">Admission Online</span>
+		</a>
+		<ul class="pcoded-submenu">
+			<li class="">
+				<a href="{{ url('/applyOnline') }}">
+					<span class="pcoded-mtext">Apply Online</span>
+				</a>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+
 
 </ul>
 </div>
 </nav>
+
+
+<!-- $request->validate([
+        'share_name'=>'required',
+        'share_price'=> 'required|integer',
+        'share_qty' => 'required|integer'
+      ]);
+      $share = new Share([
+        'share_name' => $request->get('share_name'),
+        'share_price'=> $request->get('share_price'),
+        'share_qty'=> $request->get('share_qty')
+      ]);
+      $share->save();
+      return redirect('/shares')->with('success', 'Stock has been added'); -->
