@@ -134,8 +134,9 @@
 
            <div class="single_sidebar wow ">
             <h2><span>Google Map</span></h2>
-            <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d282794.6558797403!2d89.4411916718107!3d25.207816539081524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39fd1784e93ffe15%3A0x90930842d0c098f6!2sPuraton+Badiakhali+High+School!5e0!3m2!1sen!2sbd!4v1523959786549" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe> -->
-            <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d28968.277565949553!2d89.3201913063591!3d24.82848706359003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x39fc543bb1d5cce7%3A0xa33e907dbc001fa3!2sFapore!3m2!1d24.825570199999998!2d89.32743909999999!5e0!3m2!1sen!2sbd!4v1512292908154" width="340" height="250" frameborder="0" style="border:0" allowfullscreen></iframe> 
+            <div class="map-responsive">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d28968.277565949553!2d89.3201913063591!3d24.82848706359003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x39fc543bb1d5cce7%3A0xa33e907dbc001fa3!2sFapore!3m2!1d24.825570199999998!2d89.32743909999999!5e0!3m2!1sen!2sbd!4v1512292908154" width="340" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+              </div>
 
             <h2>Online Visitors</h2>
               <div id='visitor' style="text-align:center;">

@@ -24,7 +24,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'FrontController@index');
 Route::get('/contact', 'FrontController@contact');
-
+Route::get('/charcount', 'FrontController@charcount');
+Route::get('/inputcharcount', 'FrontController@inputcharcount');
  /*
  ===============================================================================
     at a glance all menu route(front end)
@@ -124,34 +125,25 @@ Route::get('/videoGallery', 'AcademicFrontController@videoGallery');
 
 Route::get('/applyOnline', 'AdmissionBackendController@applyOnline');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
 	TNO  Route
 */
 Route::resource('tno', 'TnoController');
+//Route::resource('tno/all', 'TnoController@index');
+Route::resource('tno/emailcheck', 'TnoController@emailcheck');
+
+
+/*
+    email Available check
+*/
+Route::post('/EmailAvailable', 'EmailAvailableController@emailCheck');
+Route::post('/mobileAvailable', 'EmailAvailableController@mobileCheck');
 
 
 
 /*
 Route::group(['middleware' => 'auth', 'prefix' => 'aboutus'], function(){
-	Route::get('/add', 'AboutUsController@AddTNOMessage');
+	Route::get('/create', 'AboutUsController@AddTNOMessage');
 	Route::get('/info', 'AboutUsController@AddTNOinfo');
 	Route::get('/all', 'AboutUsController@AllTNOMessage');
 

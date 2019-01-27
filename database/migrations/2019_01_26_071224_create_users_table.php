@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTNOsTable extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,15 @@ class CreateTNOsTable extends Migration
      */
     public function up()
     {
-        Schema::create('t_n_os', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',100);
-            $table->integer('mobile')->unique();
             $table->string('email',100)->unique();
-            $table->string('password')->nullable();
-            $table->text('message');
-            $table->string('image')->nullable();
+            $table->string('mobile',100)->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -33,6 +32,6 @@ class CreateTNOsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('t_n_os');
+        Schema::dropIfExists('users');
     }
 }

@@ -21,6 +21,15 @@ class FrontController extends Controller
         return view('front.pages.contact.contact');
     }
 
+    public function charcount()
+    {
+        return view('front.test.charcount');
+    }
+    public function inputcharcount()
+    {
+        return view('front.test.inputcharcount');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

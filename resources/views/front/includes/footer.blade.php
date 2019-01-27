@@ -2,11 +2,11 @@
   <div class="single_page">
     <div class="social_link">
       <ul class="sociallink_nav">
-        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-        <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+        <li><a href="javascript:void(0)"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="javascript:void(0)"><i class="fa fa-twitter"></i></a></li>
+        <li><a href="javascript:void(0)"><i class="fa fa-google-plus"></i></a></li>
+        <li><a href="javascript:void(0)"><i class="fa fa-linkedin"></i></a></li>
+        <li><a href="javascript:void(0)"><i class="fa fa-pinterest"></i></a></li>
       </ul>
     </div>
     
@@ -23,8 +23,8 @@
           <div class="footer_widget wow fadeInLeftBig" style="float:0;">
             <h2>স্কুল ছবি </h2>
             <ul class="tag_nav">
-              <li><a href="view/front/information/photogallery.php">ফটো গ্যালারী </a></li>
-              <li><a href="#">ভিডিও গ্যালারী</a></li>
+              <li><a href="{{ url('/photoGallery') }}">ফটো গ্যালারী </a></li>
+              <li><a href="{{ url('/videoGallery') }}">ভিডিও গ্যালারী</a></li>
              
             </ul>
           </div>
@@ -33,8 +33,8 @@
           <div class="footer_widget wow fadeInDown">
             <h2>গুরুত্বপূর্ণ লিংকস</h2>
             <ul class="tag_nav">
-              <li><a href="#">শিক্ষা অধিদপ্তর</a></li>
-              <li><a href="#">ঢাকা শিক্ষা বোর্ড </a></li>
+              <li><a href="javascript:void(0)">শিক্ষা অধিদপ্তর</a></li>
+              <li><a href="javascript:void(0)">ঢাকা শিক্ষা বোর্ড </a></li>
               
              
             </ul>
