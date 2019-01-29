@@ -139,13 +139,25 @@ Route::resource('tno/emailcheck', 'TnoController@emailcheck');
 Route::post('/EmailAvailable', 'EmailAvailableController@emailCheck');
 Route::post('/mobileAvailable', 'EmailAvailableController@mobileCheck');
 
+/*
+    news route
+*/
 
+Route::get('/news/all', 'NewsController@index');
+Route::get('/news/add', 'NewsController@add');
+Route::post('/news/store', 'NewsController@store');
+Route::get('/news/{id}/edit', 'NewsController@edit');
+Route::post('/news/update/{id}', 'NewsController@update');
+Route::get('/news/delete/{id}', 'NewsController@delete');
 
 /*
-Route::group(['middleware' => 'auth', 'prefix' => 'aboutus'], function(){
-	Route::get('/create', 'AboutUsController@AddTNOMessage');
-	Route::get('/info', 'AboutUsController@AddTNOinfo');
-	Route::get('/all', 'AboutUsController@AllTNOMessage');
+    history route
+*/
 
-	Route::get('/presidentmessages', 'AboutUsController@president');
-});*/
+Route::get('/history/all', 'HistoryController@index');
+Route::get('/history/add', 'HistoryController@add');
+Route::post('/history/store', 'HistoryController@store');
+Route::get('/history/{id}/edit', 'HistoryController@edit');
+Route::post('/history/update/{id}', 'HistoryController@update');
+Route::get('/history/delete/{id}', 'HistoryController@delete');
+

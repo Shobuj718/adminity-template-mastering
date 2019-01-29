@@ -8,7 +8,6 @@
 
 <script type="text/javascript" src="{{ asset('admin') }}/files/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
 
-<script type="text/javascript" src="{{ asset('admin') }}/files/bower_components/modernizr/js/modernizr.js"></script>
 
 <script type="text/javascript" src="{{ asset('admin') }}/files/bower_components/chart.js/js/Chart.js"></script>
 

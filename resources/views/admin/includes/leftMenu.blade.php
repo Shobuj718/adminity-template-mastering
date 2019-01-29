@@ -147,14 +147,14 @@
 				</a>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('/history/add') }}">
 							<span class="pcoded-mtext">Add History Of Institution</span>
 						</a>
 					</li>
 				</ul>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('/history/all') }}">
 							<span class="pcoded-mtext">All History Of Institution</span>
 						</a>
 					</li>
@@ -257,14 +257,14 @@
 				</a>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('/news/add') }}">
 							<span class="pcoded-mtext">Add News</span>
 						</a>
 					</li>
 				</ul>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('/news/all') }}">
 							<span class="pcoded-mtext">All News</span>
 						</a>
 					</li>

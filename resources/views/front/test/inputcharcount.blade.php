@@ -26,6 +26,10 @@ body{
 	</head>
 	<body>
 		<div class="column">
+
+			<label for="input-1">Input 1: maxlength=50</label><br>
+			<input type="text" maxlength="50" id="input-1" value="Hello there!"/><br>
+
 			<label for="input-3">Character Count and left</label>
 			<div class="counter-container">
 				<input type="text" maxlength="100" id="textLength"/>
@@ -104,6 +108,10 @@ body{
 
 
 	$(document).bind("ready", function(){
+
+		// basic usage
+		$("#input-1").maxlength();
+
 	// custom counter container and text
 		$("#textLength").maxlength({
 			counterContainer: $(".counter-container"),

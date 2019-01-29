@@ -1,6 +1,6 @@
 @extends('admin.master')
 
-@section('page-title', 'All TNO Information ')
+@section('page-title', 'All school  history ')
 
 @section('header-section')
 
@@ -23,14 +23,24 @@
 
 @section('main-content')
 
-<!-- @foreach($tno as $data)
+<!-- @foreach($history as $data)
     {{ $data->name }}<br>
 @endforeach -->
 
 
 <div class="card">
 	<div class="card-header">
-		<h2>TNO Information</h2>
+		<h2 style="text-align:center">All School History</h2>
+				
+			@if(Session::has('error'))
+	            @include('admin.includes.errors')
+	        @endif
+	        @if(Session::has('success'))
+	            @include('admin.includes.success')
+	        @endif
+
+        
+
 	</div>
 	<div class="card-block">
 		<div class="table-responsive dt-responsive">
@@ -38,34 +48,27 @@
 				<thead>
 					<tr>
 						<th>Sl.</th>
-						<th>Name</th>
-						<th>Email</th>
-						<th>Mobile</th>
-						<th>Message</th>
+						<th>Summary</th>
+						<th>Details</th>
 						<th>Image</th>
 						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
-				@foreach($tno as $data)
+				@foreach($history as $data)
 					<tr>
 						<td>01</td>
-						<td>{{ $data->name }}</td>
-						<td>{{ $data->email }}</td>
-						<td>{{ $data->mobile }}</td>
-						<td>{{ $data->message }}</td>
+						<td>{{ $data->summary }}</td>
+						<td>{{ $data->details }}</td>
 						<td><p class="text-center"><img class="img-circle imageSize img-responsive" src="{{url($data->image ? $data->image : '')}}"  alt="Image"></p>
 						</td>
 
 						<td>
-                            <a href="{{url('/tno/'.$data->id.'/edit')}}" class="btn hor-grd btn-grd-success">Edit</a>
+                            <a href="{{url('/history/'.$data->id.'/edit')}}" class="btn hor-grd btn-grd-success">Edit</a>
 
-                            <a  href="{{url('/tno/'.$data->id)}}" class="btn hor-grd btn-grd-danger">Delete</a>
+                            <a  href="{{url('/history/delete/'.$data->id)}}" class="btn hor-grd btn-grd-danger">Delete</a>
                                 
-                            <!-- <form style="display: none;" id="delete-form{{$data->id}}" method="post" action="{{url('/tno/'.$data->id)}}" style="padding: 0; margin: 0; outline: 0;">
-                                {{method_field('delete')}}
-                                {{csrf_field()}}
-                            </form> -->
+                           
                         </td>
 					</tr>
 				@endforeach
@@ -73,10 +76,8 @@
 				<tfoot>
 					<tr>
 						<th>Sl.</th>
-						<th>Name</th>
-						<th>Email</th>
-						<th>Mobile</th>
-						<th>Message</th>
+						<th>Summary</th>
+						<th>Details</th>
 						<th>Image</th>
 						<th>Action</th>
 					</tr>
@@ -107,12 +108,7 @@
 <script type="text/javascript" src="{{ asset('admin') }}/files/bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
 
 <script src="{{ asset('admin') }}/files/assets/pages/data-table/js/data-table-custom.js"></script>
-<script src="{{ asset('admin') }}/files/assets/js/pcoded.min.js"></script>
-<script src="{{ asset('admin') }}/files/assets/js/vartical-layout.min.js"></script>
-<script src="{{ asset('admin') }}/files/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script type="text/javascript" src="{{ asset('admin') }}/files/assets/js/script.js"></script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}

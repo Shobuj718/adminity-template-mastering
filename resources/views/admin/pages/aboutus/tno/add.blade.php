@@ -2,6 +2,7 @@
 
 @section('page-title', 'Add TNO Message ')
 
+
 @section('main-content')
 
 
@@ -100,6 +101,8 @@
 								<img id="image" src="#" alt=" " />
 							</div>
 						</div>
+
+						
 					
 						<div class="form-group row">
 							<label class="col-sm-2"></label>
@@ -119,9 +122,7 @@
 
 @section('footer-section')
 
-<script type="text/javascript" src="{{ asset('admin') }}/files/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>
 
-<script type="text/javascript" src="{{ asset('admin') }}/files/bower_components/modernizr/js/modernizr.js"></script>
 <script type="text/javascript" src="{{ asset('admin') }}/files/bower_components/modernizr/js/css-scrollbars.js"></script>
 
 <script src="{{ asset('admin') }}/cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
@@ -134,12 +135,14 @@
 <script type="text/javascript" src="{{ asset('admin') }}/files/bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
 
 <script type="text/javascript" src="{{ asset('admin') }}/files/assets/pages/form-validation/form-validation.js"></script>
-<script src="{{ asset('admin') }}/files/assets/js/pcoded.min.js"></script>
-<script src="{{ asset('admin') }}/files/assets/js/vartical-layout.min.js"></script>
-<script src="{{ asset('admin') }}/files/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
 <script type="text/javascript" src="{{ asset('admin') }}/files/assets/js/script.js"></script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+
+
+<!-- <script src="{{asset('admin/validate/validation.js')}}"></script> -->
+
+
 
 <script type="text/javascript">
 	$(document).ready(function(){
@@ -180,7 +183,10 @@
 			var mobile_error = '';
 			var mobile = $('#mobile').val();
 			var _token = $('input[name="_token"]').val();
-			var filter = /^([0-9]{11})+/;
+			/*
+				Allowed mobile number sample, +8801812598624, 008801812598624, 01812598624, 01712598624, 01672598624, 01919598624, 01312345678
+			*/
+			var filter = /(^(\+88|0088)?(01){1}[356789]{1}(\d){8})$/;
 
 			if(!filter.test(mobile)){
 				$('#mobile_error').html('<label class="text-danger">Invalid Mobile Number !!!</label>');
