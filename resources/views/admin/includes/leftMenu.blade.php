@@ -162,6 +162,25 @@
 			</li>
 			<li class="pcoded-hasmenu ">
 				<a href="javascript:void(0)">
+					<span class="pcoded-mtext">Founder Of Institution</span>
+				</a>
+				<ul class="pcoded-submenu">
+					<li class="">
+						<a href="{{ url('/founder/add') }}">
+							<span class="pcoded-mtext">Add Founder Of Institution</span>
+						</a>
+					</li>
+				</ul>
+				<ul class="pcoded-submenu">
+					<li class="">
+						<a href="{{ url('/founder/all') }}">
+							<span class="pcoded-mtext">Founder Information</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+			<li class="pcoded-hasmenu ">
+				<a href="javascript:void(0)">
 					<span class="pcoded-mtext">School Law</span>
 				</a>
 				<ul class="pcoded-submenu">

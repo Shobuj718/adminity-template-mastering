@@ -161,3 +161,15 @@ Route::get('/history/{id}/edit', 'HistoryController@edit');
 Route::post('/history/update/{id}', 'HistoryController@update');
 Route::get('/history/delete/{id}', 'HistoryController@delete');
 
+
+/*
+    Founder route
+*/
+
+Route::get('/founder/all', 'FounderController@index');
+Route::get('/founder/add', 'FounderController@add');
+Route::post('/founder/store', 'FounderController@store');
+Route::get('/founder/{id}/edit', 'FounderController@edit');
+Route::post('/founder/update/{id}', 'FounderController@update');
+Route::get('/founder/delete/{id}', 'FounderController@delete');
+
