@@ -153,23 +153,63 @@ Route::get('/news/delete/{id}', 'NewsController@delete');
 /*
     history route
 */
+Route::group(['middleware' => 'auth', 'prefix' => 'history'], function(){
+    Route::get('/all', 'HistoryController@index');
+    Route::get('/add', 'HistoryController@add');
+    Route::post('/store', 'HistoryController@store');
+    Route::get('/{id}/edit', 'HistoryController@edit');
+    Route::post('/update/{id}', 'HistoryController@update');
+    Route::get('/delete/{id}', 'HistoryController@delete');
+});
 
-Route::get('/history/all', 'HistoryController@index');
-Route::get('/history/add', 'HistoryController@add');
-Route::post('/history/store', 'HistoryController@store');
-Route::get('/history/{id}/edit', 'HistoryController@edit');
-Route::post('/history/update/{id}', 'HistoryController@update');
-Route::get('/history/delete/{id}', 'HistoryController@delete');
 
 
 /*
     Founder route
 */
 
-Route::get('/founder/all', 'FounderController@index');
-Route::get('/founder/add', 'FounderController@add');
-Route::post('/founder/store', 'FounderController@store');
-Route::get('/founder/{id}/edit', 'FounderController@edit');
-Route::post('/founder/update/{id}', 'FounderController@update');
-Route::get('/founder/delete/{id}', 'FounderController@delete');
+Route::group(['middleware' => 'auth', 'prefix' => 'founder'], function(){
+    Route::get('/all', 'FounderController@index');
+    Route::get('/add', 'FounderController@add');
+    Route::post('/store', 'FounderController@store');
+    Route::get('/{id}/edit', 'FounderController@edit');
+    Route::post('/update/{id}', 'FounderController@update');
+    Route::get('/delete/{id}', 'FounderController@delete');
+});
+
+/*
+    School law route
+*/
+Route::group(['middleware' => 'auth', 'prefix' => 'schoollaw'], function(){
+    Route::get('/all', 'SchoollawController@index');
+    Route::get('/add', 'SchoollawController@add');
+    Route::post('/store', 'SchoollawController@store');
+    Route::get('/{id}/edit', 'SchoollawController@edit');
+    Route::post('/update/{id}', 'SchoollawController@update');
+    Route::get('/delete/{id}', 'SchoollawController@delete');
+});
+
+/*
+    goal purpose law route
+*/
+Route::group(['middleware' => 'auth', 'prefix' => 'goalpurpose'], function(){
+    Route::get('/all', 'GoalPurposeController@index');
+    Route::get('/add', 'GoalPurposeController@add');
+    Route::post('/store', 'GoalPurposeController@store');
+    Route::get('/{id}/edit', 'GoalPurposeController@edit');
+    Route::post('/update/{id}', 'GoalPurposeController@update');
+    Route::get('/delete/{id}', 'GoalPurposeController@delete');
+});
+
+/*
+    goal purpose law route
+*/
+Route::group(['middleware' => 'auth', 'prefix' => 'physical_infra'], function(){
+    Route::get('/all', 'PhysicalInfrustructure@index');
+    Route::get('/add', 'PhysicalInfrustructure@add');
+    Route::post('/store', 'PhysicalInfrustructure@store');
+    Route::get('/{id}/edit', 'PhysicalInfrustructure@edit');
+    Route::post('/update/{id}', 'PhysicalInfrustructure@update');
+    Route::get('/delete/{id}', 'PhysicalInfrustructure@delete');
+});
 

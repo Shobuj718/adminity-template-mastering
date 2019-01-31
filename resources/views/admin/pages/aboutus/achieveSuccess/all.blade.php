@@ -1,6 +1,6 @@
 @extends('admin.master')
 
-@section('page-title', 'All Founder Information ')
+@section('page-title', 'All Achievement And Success Information ')
 
 @section('header-section')
 
@@ -23,14 +23,14 @@
 
 @section('main-content')
 
-<!-- @foreach($founder as $data)
+<!-- @foreach($achieveSuccess as $data)
     {{ $data->name }}<br>
 @endforeach -->
 
 
 <div class="card">
 	<div class="card-header">
-		<h2 style="text-align:center">All Founder Information</h2>
+		<h2 style="text-align:center">All Achievement And Success Information</h2>
 				
 			@if(Session::has('error'))
 	            @include('admin.includes.errors')
@@ -48,15 +48,16 @@
 				<thead>
 					<tr>
 						<th>Sl.</th>
-						<th>Name</th>
+						<th>Summary</th>
 						<th>Details</th>
 						<th>Image</th>
 						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
-				<?php  $sl=0; ?>
-				@foreach($founder as $data)
+				<?php $sl =0 ?>
+				@foreach($achieveSuccess as $data)
+
 					<tr>
 						<td><?php echo ++$sl; ?></td>
 						<td>{{ $data->name }}</td>
@@ -65,10 +66,9 @@
 						</td>
 
 						<td>
-                            <a href="{{url('/founder/'.$data->id.'/edit')}}" class="btn hor-grd btn-grd-success">Edit</a>
+                            <a href="{{url('/achieve_success/'.$data->id.'/edit')}}" class="btn hor-grd btn-grd-success">Edit</a>
 
-                            <a  href="{{url('/founder/delete/'.$data->id)}}" class="btn hor-grd btn-grd-danger">Delete</a>
-                                
+                            <a  href="{{url('/achieve_success/delete/'.$data->id)}}" class="btn hor-grd btn-grd-danger">Delete</a>                               
                            
                         </td>
 					</tr>
@@ -77,7 +77,7 @@
 				<tfoot>
 					<tr>
 						<th>Sl.</th>
-						<th>Name</th>
+						<th>Sumary</th>
 						<th>Details</th>
 						<th>Image</th>
 						<th>Action</th>

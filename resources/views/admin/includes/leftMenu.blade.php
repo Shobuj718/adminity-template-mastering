@@ -185,14 +185,14 @@
 				</a>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('/schoollaw/add') }}">
 							<span class="pcoded-mtext">Add School Law</span>
 						</a>
 					</li>
 				</ul>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('/schoollaw/all') }}">
 							<span class="pcoded-mtext">All School Law</span>
 						</a>
 					</li>
@@ -204,14 +204,14 @@
 				</a>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('/goalpurpose/add') }}">
 							<span class="pcoded-mtext">Add Goul & Purpose</span>
 						</a>
 					</li>
 				</ul>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('goalpurpose/all') }}">
 							<span class="pcoded-mtext">All Goul & Purpose</span>
 						</a>
 					</li>
@@ -223,14 +223,14 @@
 				</a>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('/achieve_success/add') }}">
 							<span class="pcoded-mtext">Add Achievement & Success</span>
 						</a>
 					</li>
 				</ul>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('/achieve_success/all') }}">
 							<span class="pcoded-mtext">All Achievement & Success</span>
 						</a>
 					</li>
@@ -242,14 +242,14 @@
 				</a>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('physical_infra/add') }}">
 							<span class="pcoded-mtext">Add Physical Infrustructure</span>
 						</a>
 					</li>
 				</ul>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('physical_infra/all') }}">
 							<span class="pcoded-mtext">All Physical Infrustructure</span>
 						</a>
 					</li>

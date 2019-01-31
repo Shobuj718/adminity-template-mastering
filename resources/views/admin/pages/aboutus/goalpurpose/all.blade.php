@@ -1,6 +1,6 @@
 @extends('admin.master')
 
-@section('page-title', 'All Founder Information ')
+@section('page-title', 'All Goal And Purpose Information ')
 
 @section('header-section')
 
@@ -23,14 +23,14 @@
 
 @section('main-content')
 
-<!-- @foreach($founder as $data)
+<!-- @foreach($goalpurpose as $data)
     {{ $data->name }}<br>
 @endforeach -->
 
 
 <div class="card">
 	<div class="card-header">
-		<h2 style="text-align:center">All Founder Information</h2>
+		<h2 style="text-align:center">All Goal And Purpose Information</h2>
 				
 			@if(Session::has('error'))
 	            @include('admin.includes.errors')
@@ -55,8 +55,9 @@
 					</tr>
 				</thead>
 				<tbody>
-				<?php  $sl=0; ?>
-				@foreach($founder as $data)
+				<?php $sl =0 ?>
+				@foreach($goalpurpose as $data)
+
 					<tr>
 						<td><?php echo ++$sl; ?></td>
 						<td>{{ $data->name }}</td>
@@ -65,9 +66,9 @@
 						</td>
 
 						<td>
-                            <a href="{{url('/founder/'.$data->id.'/edit')}}" class="btn hor-grd btn-grd-success">Edit</a>
+                            <a href="{{url('/goalpurpose/'.$data->id.'/edit')}}" class="btn hor-grd btn-grd-success">Edit</a>
 
-                            <a  href="{{url('/founder/delete/'.$data->id)}}" class="btn hor-grd btn-grd-danger">Delete</a>
+                            <a  href="{{url('/goalpurpose/delete/'.$data->id)}}" class="btn hor-grd btn-grd-danger">Delete</a>
                                 
                            
                         </td>
