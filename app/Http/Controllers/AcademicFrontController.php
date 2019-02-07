@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Parentguideline;
+
 use App\Ataglance;
 use Illuminate\Http\Request;
 
@@ -9,8 +11,6 @@ class AcademicFrontController extends Controller
 {
     public function classRoutine()
     {
-    	//$classRoutine = Ataglance::all();
-
     	return view('front.pages.academic.classRoutine');
     }
     public function examRoutine()
@@ -27,7 +27,8 @@ class AcademicFrontController extends Controller
     }
     public function parentsGuideline()
     {
-    	return view('front.pages.academic.parentsGuideline');
+        $data = Parentguideline::all();
+    	return view('front.pages.academic.parentsGuideline', compact('data'));
     }
 
     public function bookList()

@@ -42,14 +42,16 @@
             <ul class="dropdown-menu" role="menu" style="min-width:420px;">
               <div class="row hover" style="padding-left:;">
                 <div class="col-md-5">
+                <li><a href="{{ url('/studentsummary') }}">Student Summary</a>
                 <li><a href="{{ url('/vacancy') }}">Vacancy</a>
                   <li><a href="{{ url('/news') }}">News</a></li>
-                <li><a href="{{ url('/holiday') }}" target="_blank">Holiday List</a></li> 
+                <li><a href="{{ url('/holiday') }}">Holiday List</a></li> 
                 <li><a href="{{ url('/facility') }}">Facilities</a></li>
-                <li><a href="http://www.worldehsan.com/">Library</a></li>
-                <li><a href="http://www.muktopaath.gov.bd" target="_blank">Free lession</a></li>
+                <li><a href="http://www.worldehsan.com/" target="_blank">Library</a></li>
+                
                 </div>
                 <div class="col-md-7">
+                <li><a href="http://www.muktopaath.gov.bd" target="_blank">Free lession</a></li>
                 <li><a href="http://www.teachers.gov.bd" target="_blank">Teachers Batayon  </a></li>
                 <li><a href="http://www.konnect.edu.bd" target="_blank">Students  Batayon  </a></li>      
                 <li><a href="{{ url('/formerPrinciples') }}">Former Principles</a></li>
@@ -72,7 +74,6 @@
                 <li><a href="{{ url('/parentsGuideline') }}">Guidelines for Parents</a></li>      
                 </div>
                 <div class="col-md-6">  
-                <li><a href="{{ url('/bookList') }}">Text Book List</a></li>
                 <li><a href="{{ url('/photoGallery') }}">Photo Gallery</a></li>
                 <li><a href="{{ url('/videoGallery') }}">Video Gallery</a></li>         
                 <li><a href="http://www.educationboardresults.gov.bd/">Board Result</a></li>

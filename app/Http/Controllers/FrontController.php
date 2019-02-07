@@ -2,7 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Slider;
+use App\History;
+use App\President;
+use App\Principal;
+use App\Viceprincipal;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\DB;
 
 class FrontController extends Controller
 {
@@ -13,13 +21,18 @@ class FrontController extends Controller
      */
     public function index()
     {
-        return view('front.home.homeContent');
+        $slider        = Slider::all();
+        $history       = History::first();
+        $president     = President::first();
+        $principal     = Principal::first();
+        $viceprincipal = Viceprincipal::first();
+        
+        return view('front.home.homeContent', compact('slider', 'history', 'president', 'principal','viceprincipal'));
+
+        //return view('front.home.homeContent');
     }
 
-    public function contact()
-    {
-        return view('front.pages.contact.contact');
-    }
+   
 
     public function charcount()
     {

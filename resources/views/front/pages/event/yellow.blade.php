@@ -28,18 +28,22 @@
                 <th>Id</th>
                 <th>Event_Name</th>
                 <th>Event_Title</th>    
-                <th>Posted_at</th>    
+                <!-- <th>Posted_at</th>   -->  
+                <th>Details</th>
                 <th>Download_File</th>
             </tr>
         </thead>
         <tbody>
-           <tr>
-                <td>1</td>
-                <td>Yellow Event name</td>
-                <td>this is title</td>
-                <td>12-18-18</td>
-                <td><a href="{{ asset('/uploads/information/2018 Vacation Notice .pdf') }}" target="_blank" ><img class="vacancy img-center" src="uploads/tnoImage/Md Rakib Hasanasdf-1547620150.green-nature-wallpaper.jpg"  alt="No Image" /></td>
+           <?php $i=0; ?>
+        @foreach($data as $result)
+            <tr>
+                <td><?php echo ++$i; ?></td>
+                <td><a href="javascript:void(0)" target="_blank" >{{ $result->event_name }}</a></td>
+                <td>{{ $result->category }}</td>
+                <td>{{ $result->details }}</td>
+                <td><a href="javascript:void(0)" target="_blank" ><img class="vacancy img-center" src="{{url($result->image ? $result->image : '')}}"  alt="No Image" /></td>
             </tr>
+        @endforeach    
                     
 
         </tbody>

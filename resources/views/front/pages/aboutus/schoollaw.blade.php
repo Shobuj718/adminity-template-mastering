@@ -28,18 +28,13 @@
     	<div class="col-md-12 col-sm-12 col-lg-12">
     		<h2 class="priName">Find Out the Latest in School Law</h2>
     		<p class="priAddress">Saghata pilot high school</p><br>
-    		<h3>1. Student Rights and Discipline</h3>
-    		<p class="priSpeach">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-    		<h3>2. Curriculum</h3>
-    		<p class="priSpeach">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-    		<h3>3. Legal System</h3>
-    		<p class="priSpeach">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-    		<h3>4. School Safety</h3>
-    		<p class="priSpeach">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-    		<h3>5. Privatization and Choice</h3>
-    		<p class="priSpeach">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-    		<h3>6. Governance </h3>
-    		<p class="priSpeach">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+            <?php $i=0; ?>
+            @foreach($data as $result)
+        		<h3><?php echo ++$i; ?> {{ $result->name }}</h3>
+        		<p class="priSpeach">{{ $result->details }}</p>
+            @endforeach
+
+    		
     	</div>
     </div>
 

@@ -59,11 +59,14 @@
 					<tr>
 						<td>01</td>
 						<td>{{ $data->summary }}</td>
-						<td>{{ $data->details }}</td>
+						<td>
+						<textarea rows="5" cols="5" name="details" class="form-control"  placeholder="Enter history details ">{{ $data->details }}</textarea></td>
+
 						<td><p class="text-center"><img class="img-circle imageSize img-responsive" src="{{url($data->image ? $data->image : '')}}"  alt="Image"></p>
 						</td>
 
 						<td>
+                            <a href="{{url('/history/show/'.$data->id)}}" class="btn hor-grd btn-grd-info">View</a>
                             <a href="{{url('/history/'.$data->id.'/edit')}}" class="btn hor-grd btn-grd-success">Edit</a>
 
                             <a  href="{{url('/history/delete/'.$data->id)}}" class="btn hor-grd btn-grd-danger">Delete</a>

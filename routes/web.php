@@ -10,10 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 
 
@@ -23,9 +23,41 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/', 'FrontController@index');
-Route::get('/contact', 'FrontController@contact');
 Route::get('/charcount', 'FrontController@charcount');
 Route::get('/inputcharcount', 'FrontController@inputcharcount');
+
+
+Route::get('/contact', 'ContactController@contact');
+Route::post('/contact/store', 'ContactController@store');
+
+/*
+ ===============================================================================
+    Category route
+ ===============================================================================
+ */
+Route::group(['middleware' => 'auth', 'prefix' => 'category'], function(){
+    Route::get('/all', 'CategoryController@index');
+    Route::get('/add', 'CategoryController@add');
+    Route::post('/store', 'CategoryController@store');
+    Route::get('/{id}/edit', 'CategoryController@edit');
+    Route::post('/update/{id}', 'CategoryController@update');
+    Route::get('/delete/{id}', 'CategoryController@delete');
+});
+/*
+ ===============================================================================
+   Sub Category route
+ ===============================================================================
+ */
+Route::group(['middleware' => 'auth', 'prefix' => 'subcategory'], function(){
+    Route::get('/all', 'SubCategoryController@index');
+    Route::get('/add', 'SubCategoryController@add');
+    Route::post('/store', 'SubCategoryController@store');
+    Route::get('/{id}/edit', 'SubCategoryController@edit');
+    Route::post('/update/{id}', 'SubCategoryController@update');
+    Route::get('/delete/{id}', 'SubCategoryController@delete');
+});
+
+
  /*
  ===============================================================================
     at a glance all menu route(front end)
@@ -58,10 +90,11 @@ Route::get('/assetinfo', 'AtaglanceController@assetinfo');
 
  /*
  ===============================================================================
-    About us all menu route
+    Information all menu route
  ===============================================================================
  */
 
+ Route::get('/studentsummary', 'InformationFrontController@studentsummary');
  Route::get('/vacancy', 'InformationFrontController@vacancy');
  Route::get('/news', 'InformationFrontController@news');
  Route::get('/holiday', 'InformationFrontController@holiday');
@@ -133,6 +166,58 @@ Route::resource('tno', 'TnoController');
 Route::resource('tno/emailcheck', 'TnoController@emailcheck');
 
 
+
+/*
+    President route
+*/
+
+Route::group(['middleware' => 'auth', 'prefix' => 'president'], function(){
+    Route::get('/all', 'PresidentController@index');
+    Route::get('/add', 'PresidentController@add');
+    Route::get('/show/{id}', 'PresidentController@show');
+    Route::post('/store', 'PresidentController@store');
+    Route::get('/{id}/edit', 'PresidentController@edit');
+    Route::post('/update/{id}', 'PresidentController@update');
+    Route::get('/delete/{id}', 'PresidentController@delete');
+});
+
+/*
+    principal route
+*/
+
+Route::group(['middleware' => 'auth', 'prefix' => 'principal'], function(){
+    Route::get('/all', 'PrincipalController@index');
+    Route::get('/add', 'PrincipalController@add');
+    Route::post('/store', 'PrincipalController@store');
+    Route::get('/{id}/edit', 'PrincipalController@edit');
+    Route::post('/update/{id}', 'PrincipalController@update');
+    Route::get('/delete/{id}', 'PrincipalController@delete');
+});
+/*
+    Vice principal route
+*/
+
+Route::group(['middleware' => 'auth', 'prefix' => 'vicePrincipal'], function(){
+    Route::get('/all', 'VicePrincipalController@index');
+    Route::get('/add', 'VicePrincipalController@add');
+    Route::post('/store', 'VicePrincipalController@store');
+    Route::get('/{id}/edit', 'VicePrincipalController@edit');
+    Route::post('/update/{id}', 'VicePrincipalController@update');
+    Route::get('/delete/{id}', 'VicePrincipalController@delete');
+});
+/*
+    slider route
+*/
+
+Route::group(['middleware' => 'auth', 'prefix' => 'slider'], function(){
+    Route::get('/all', 'SliderController@index');
+    Route::get('/add', 'SliderController@add');
+    Route::post('/store', 'SliderController@store');
+    Route::get('/{id}/edit', 'SliderController@edit');
+    Route::post('/update/{id}', 'SliderController@update');
+    Route::get('/delete/{id}', 'SliderController@delete');
+});
+
 /*
     email Available check
 */
@@ -154,6 +239,8 @@ Route::get('/news/delete/{id}', 'NewsController@delete');
     history route
 */
 Route::group(['middleware' => 'auth', 'prefix' => 'history'], function(){
+    Route::get('/all', 'HistoryController@index');
+    Route::get('/show/{id}', 'HistoryController@show');
     Route::get('/all', 'HistoryController@index');
     Route::get('/add', 'HistoryController@add');
     Route::post('/store', 'HistoryController@store');
@@ -202,7 +289,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'goalpurpose'], function(){
 });
 
 /*
-    goal purpose law route
+    physical_infra route
 */
 Route::group(['middleware' => 'auth', 'prefix' => 'physical_infra'], function(){
     Route::get('/all', 'PhysicalInfrustructure@index');
@@ -212,4 +299,99 @@ Route::group(['middleware' => 'auth', 'prefix' => 'physical_infra'], function(){
     Route::post('/update/{id}', 'PhysicalInfrustructure@update');
     Route::get('/delete/{id}', 'PhysicalInfrustructure@delete');
 });
+/*
+    information menu route
+*/
+Route::group(['middleware' => 'auth', 'prefix' => 'studentsummary'], function(){
+    Route::get('/all', 'StudentsummaryController@index');
+    
+});
+
+/*
+    vacancy route
+*/
+Route::group(['middleware' => 'auth', 'prefix' => 'vacancy'], function(){
+    Route::get('/all', 'VacancyController@index');
+    Route::get('/add', 'VacancyController@add');
+    Route::post('/store', 'VacancyController@store');
+    Route::get('/{id}/edit', 'VacancyController@edit');
+    Route::post('/update/{id}', 'VacancyController@update');
+    Route::get('/delete/{id}', 'VacancyController@delete');
+});
+
+/*
+    holiday route
+*/
+Route::group(['middleware' => 'auth', 'prefix' => 'holiday'], function(){
+    Route::get('/all', 'HolidayListController@index');
+    Route::get('/add', 'HolidayListController@add');
+    Route::post('/store', 'HolidayListController@store');
+    Route::get('/{id}/edit', 'HolidayListController@edit');
+    Route::post('/update/{id}', 'HolidayListController@update');
+    Route::get('/delete/{id}', 'HolidayListController@delete');
+});
+
+/*
+    facility route
+*/
+Route::group(['middleware' => 'auth', 'prefix' => 'facility'], function(){
+    Route::get('/all', 'FacilityController@index');
+    Route::get('/add', 'FacilityController@add');
+    Route::post('/store', 'FacilityController@store');
+    Route::get('/{id}/edit', 'FacilityController@edit');
+    Route::post('/update/{id}', 'FacilityController@update');
+    Route::get('/delete/{id}', 'FacilityController@delete');
+});
+
+
+/*
+    parentsGuideline route
+*/
+Route::group(['middleware' => 'auth', 'prefix' => 'parentsGuideline'], function(){
+    Route::get('/all', 'ParentsGuidelineController@index');
+    Route::get('/add', 'ParentsGuidelineController@add');
+    Route::post('/store', 'ParentsGuidelineController@store');
+    Route::get('/{id}/edit', 'ParentsGuidelineController@edit');
+    Route::post('/update/{id}', 'ParentsGuidelineController@update');
+    Route::get('/delete/{id}', 'ParentsGuidelineController@delete');
+});
+
+/*
+    Event route
+*/
+Route::group(['middleware' => 'auth', 'prefix' => 'event'], function(){
+    Route::get('/all', 'EventController@index');
+    Route::get('/add', 'EventController@add');
+    Route::post('/store', 'EventController@store');
+    Route::get('/{id}/edit', 'EventController@edit');
+    Route::post('/update/{id}', 'EventController@update');
+    Route::get('/delete/{id}', 'EventController@delete');
+});
+
+/*
+    Event route
+*/
+Route::group(['middleware' => 'auth', 'prefix' => 'eventInfo'], function(){
+    Route::get('/all', 'EventInfoController@index');
+    Route::get('/add', 'EventInfoController@add');
+    Route::post('/store', 'EventInfoController@store');
+    Route::get('/{id}/edit', 'EventInfoController@edit');
+    Route::post('/update/{id}', 'EventInfoController@update');
+    Route::get('/delete/{id}', 'EventInfoController@delete');
+});
+
+
+/*
+    Event route
+*/
+Route::group(['middleware' => 'auth', 'prefix' => 'volunteer'], function(){
+    Route::get('/all', 'VolunteerController@index');
+    Route::get('/add', 'VolunteerController@add');
+    Route::post('/store', 'VolunteerController@store');
+    Route::get('/{id}/edit', 'VolunteerController@edit');
+    Route::post('/update/{id}', 'VolunteerController@update');
+    Route::get('/delete/{id}', 'VolunteerController@delete');
+});
+
+
 

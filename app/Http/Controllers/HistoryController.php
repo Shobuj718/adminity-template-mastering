@@ -19,8 +19,16 @@ class HistoryController extends Controller
 
     public function add()
     {
-    	return view('admin.pages.aboutus.history.add');
+        return view('admin.pages.aboutus.history.add');
     }
+    
+    public function show($id)
+    {
+    	$history = DB::table('histories')->where('id', $id)->first();
+
+        return view('admin.pages.aboutus.history.show', compact('history'));
+    }
+
 
     public function store(Request $request)
     {

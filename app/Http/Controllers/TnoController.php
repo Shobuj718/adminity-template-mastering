@@ -80,11 +80,12 @@ class TnoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+     public function show($id)
     {
-        //
-    }
+        $tno = DB::table('t_n_o_s')->where('id', $id)->first();
 
+        return view('admin.pages.aboutus.tno.show', compact('tno'));
+    }
     /**
      * Show the form for editing the specified resource.
      *

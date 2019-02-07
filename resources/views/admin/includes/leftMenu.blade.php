@@ -57,6 +57,44 @@
 	<!-- about use menu  -->
 
 <div class="pcoded-navigatio-lavel">Other</div>
+
+<ul class="pcoded-item pcoded-left-item">
+	<li class="pcoded-hasmenu ">
+		<a href="javascript:void(0)">
+			<span class="pcoded-micon"><i class="feather icon-list"></i></span>
+			<span class="pcoded-mtext">Category</span>
+		</a>
+		<ul class="pcoded-submenu">
+			<li class="">
+				<a href="{{ url('/category/add') }}">
+					<span class="pcoded-mtext">Add Category</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="pcoded-submenu">
+			<li class="">
+				<a href="{{ url('/category/all') }}">
+					<span class="pcoded-mtext">All Category</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="pcoded-submenu">
+			<li class="">
+				<a href="{{ url('/subcategory/add') }}">
+					<span class="pcoded-mtext">Add Sub Category</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="pcoded-submenu">
+			<li class="">
+				<a href="{{ url('/subcategory/all') }}">
+					<span class="pcoded-mtext">All Sub Category</span>
+				</a>
+			</li>
+		</ul>
+	</li>
+</ul>
+
 <ul class="pcoded-item pcoded-left-item">
 	<li class="pcoded-hasmenu ">
 		<a href="javascript:void(0)">
@@ -65,6 +103,8 @@
 		</a>
 		<ul class="pcoded-submenu">
 			
+			
+
 			<li class="pcoded-hasmenu ">
 				<a href="javascript:void(0)">
 					<span class="pcoded-mtext">TNO Message</span>
@@ -90,14 +130,14 @@
 				</a>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('president/add') }}">
 							<span class="pcoded-mtext">Add President Message</span>
 						</a>
 					</li>
 				</ul>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('president/all') }}">
 							<span class="pcoded-mtext">All President Message</span>
 						</a>
 					</li>
@@ -109,14 +149,14 @@
 				</a>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('principal/add') }}">
 							<span class="pcoded-mtext">Add Principal Message</span>
 						</a>
 					</li>
 				</ul>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('principal/all') }}">
 							<span class="pcoded-mtext">All Principal Message</span>
 						</a>
 					</li>
@@ -128,14 +168,14 @@
 				</a>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('vicePrincipal/add') }}">
 							<span class="pcoded-mtext">Add Vice Principal Message</span>
 						</a>
 					</li>
 				</ul>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('vicePrincipal/all') }}">
 							<span class="pcoded-mtext">All Vice Principal Message</span>
 						</a>
 					</li>
@@ -271,6 +311,12 @@
 		<ul class="pcoded-submenu">
 			
 			<li class="pcoded-hasmenu ">
+				<a href="{{ url('/studentsummary/all') }}">
+					<span class="pcoded-mtext">Student Summary</span>
+				</a>
+			</li>
+
+			<li class="pcoded-hasmenu ">
 				<a href="javascript:void(0)">
 					<span class="pcoded-mtext">News</span>
 				</a>
@@ -289,20 +335,21 @@
 					</li>
 				</ul>
 			</li>
+
 			<li class="pcoded-hasmenu ">
 				<a href="javascript:void(0)">
 					<span class="pcoded-mtext">Holiday List</span>
 				</a>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('/holiday/add') }}">
 							<span class="pcoded-mtext">Add Holiday List</span>
 						</a>
 					</li>
 				</ul>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('/holiday/all') }}">
 							<span class="pcoded-mtext">All Holiday List</span>
 						</a>
 					</li>
@@ -314,14 +361,14 @@
 				</a>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('/vacancy/add') }}">
 							<span class="pcoded-mtext">Add Vacancy </span>
 						</a>
 					</li>
 				</ul>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('/vacancy/all') }}">
 							<span class="pcoded-mtext">All Vacancy</span>
 						</a>
 					</li>
@@ -333,14 +380,14 @@
 				</a>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('facility/add')}}">
 							<span class="pcoded-mtext">Add Facilities </span>
 						</a>
 					</li>
 				</ul>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('facility/all')}}">
 							<span class="pcoded-mtext">All Facilities</span>
 						</a>
 					</li>
@@ -385,6 +432,7 @@
 	</li>
 </ul>
 
+
 <ul class="pcoded-item pcoded-left-item">
 	<li class="pcoded-hasmenu ">
 		<a href="javascript:void(0)">
@@ -414,14 +462,14 @@
 				</a>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('parentsGuideline/add') }}">
 							<span class="pcoded-mtext">Add Guidelines</span>
 						</a>
 					</li>
 				</ul>
 				<ul class="pcoded-submenu">
 					<li class="">
-						<a href="javascript:void(0)">
+						<a href="{{ url('parentsGuideline/all') }}">
 							<span class="pcoded-mtext">All Guidelines</span>
 						</a>
 					</li>
@@ -505,6 +553,97 @@
 </ul>
 
 
+<ul class="pcoded-item pcoded-left-item">
+	<li class="pcoded-hasmenu ">
+		<a href="javascript:void(0)">
+			<span class="pcoded-micon"><i class="feather icon-list"></i></span>
+			<span class="pcoded-mtext">Events Information</span>
+		</a>
+		<ul class="pcoded-submenu">
+		
+			<li class="pcoded-hasmenu ">
+				<a href="javascript:void(0)">
+					<span class="pcoded-mtext">Events</span>
+				</a>
+				<ul class="pcoded-submenu">
+					<li class="">
+						<a href="{{ url('/event/add') }}">
+							<span class="pcoded-mtext">Add Events</span>
+						</a>
+					</li>
+				</ul>
+				<ul class="pcoded-submenu">
+					<li class="">
+						<a href="{{ url('/event/all') }}">
+							<span class="pcoded-mtext">All Events</span>
+						</a>
+					</li>
+				</ul>
+				<ul class="pcoded-submenu">
+					<li class="">
+						<a href="{{ url('/eventInfo/add') }}">
+							<span class="pcoded-mtext">Add Events Info</span>
+						</a>
+					</li>
+				</ul>
+				<ul class="pcoded-submenu">
+					<li class="">
+						<a href="{{ url('/eventInfo/all') }}">
+							<span class="pcoded-mtext">All Events Info</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+
+			<li class="pcoded-hasmenu ">
+				<a href="javascript:void(0)">
+					<span class="pcoded-mtext">Volunteer List</span>
+				</a>
+				<ul class="pcoded-submenu">
+					<li class="">
+						<a href="{{ url('/volunteer/add') }}">
+							<span class="pcoded-mtext">Add Volunteer</span>
+						</a>
+					</li>
+				</ul>
+				<ul class="pcoded-submenu">
+					<li class="">
+						<a href="{{ url('/volunteer/all') }}">
+							<span class="pcoded-mtext">All Volunteer</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</li>
+</ul>
+
+
+
+
+	
+<ul class="pcoded-item pcoded-left-item">
+	<li class="pcoded-hasmenu ">
+		<a href="javascript:void(0)">
+			<span class="pcoded-micon"><i class="feather icon-list"></i></span>
+			<span class="pcoded-mtext">Slider Option</span>
+		</a>
+		<ul class="pcoded-submenu">
+			<li class="">
+				<a href="{{ url('/slider/add') }}">
+					<span class="pcoded-mtext">Add Slider</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="pcoded-submenu">
+			<li class="">
+				<a href="{{ url('/slider/all') }}">
+					<span class="pcoded-mtext">All Slider</span>
+				</a>
+			</li>
+		</ul>
+	</li>
+</ul>
 	
 <ul class="pcoded-item pcoded-left-item">
 	<li class="pcoded-hasmenu ">

@@ -34,15 +34,19 @@
             </tr>
         </thead>
         <tbody>
+
+            <?php $i=0; ?>
+        @foreach($data as $result)
            <tr>
-                <td>1</td>
-                <td><a href="{{ asset('/uploads/information/2018 Vacation Notice .pdf') }}" target="_blank" >Six</a></td>
-                <td>120</td>
-                <td>50</td>
-                <td>12-12-12</td>
-                <td><a href="{{ asset('/uploads/information/2018 Vacation Notice .pdf') }}" target="_blank" ><img class="vacancy img-center" src="uploads/tnoImage/Md Rakib Hasanasdf-1547620150.green-nature-wallpaper.jpg"  alt="No Image" /></td>
+
+                <td><?php echo ++$i; ?></td>
+                <td><a href="javascript:void(0)" target="_blank" >{{ $result->className }}</a></td>
+                <td>{{ $result->totalSeats }}</td>
+                <td>{{ $result->emptySeats }}</td>
+                <td>{{ $result->created_at->format('Y-m-d') }}</td>
+                <td><a href="javascript:void(0)" target="_blank" ><img class="vacancy img-center" src="{{url($result->image ? $result->image : '')}}"  alt="No Image" /></td>
             </tr>
-                    
+        @endforeach       
 
         </tbody>
     </table>

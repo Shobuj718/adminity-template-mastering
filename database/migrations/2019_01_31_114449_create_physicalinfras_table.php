@@ -14,7 +14,7 @@ class CreatePhysicalinfrasTable extends Migration
     public function up()
     {
         Schema::create('physicalinfras', function (Blueprint $table) {
-           $table->increments('id');
+            $table->increments('id');
             $table->string('name');
             $table->text('details');
             $table->string('image')->nullable();

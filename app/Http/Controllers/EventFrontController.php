@@ -2,19 +2,33 @@
 
 namespace App\Http\Controllers;
 
+use App\Event;
+use App\Eventinfo;
 use App\Ataglance;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EventFrontController extends Controller
 {
     public function yellow()
-    {
-    	$yellow = Ataglance::all();
+    {       
+        $id = 1;
+	    $data = DB::table('eventinfos')
+            ->join('events', 'eventinfos.event_cat_id', '=', 'events.id')
+            ->select('eventinfos.*', 'events.category')
+            ->where('events.id', '=', $id)
+            ->get();
 
-    	return view('front.pages.event.yellow');
+    	return view('front.pages.event.yellow', compact('data'));
     }
     public function scout()
     {
+        $id = 1;
+        $data = DB::table('eventinfos')
+            ->join('events', 'eventinfos.event_cat_id', '=', 'events.id')
+            ->select('eventinfos.*', 'events.category')
+            ->where('events.id', '=', $id)
+            ->get();
     	return view('front.pages.event.scout');
     }
     public function girlsGuide()

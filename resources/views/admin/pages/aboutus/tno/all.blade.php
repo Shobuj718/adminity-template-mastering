@@ -12,6 +12,7 @@
 
 @endsection
 
+
 @section('style-section')
 	<style type="text/css">
 		.imageSize{
@@ -58,6 +59,7 @@
 						</td>
 
 						<td>
+							<a href="javascript:void(0)" class="btn hor-grd btn-grd-info">View</a>
                             <a href="{{url('/tno/'.$data->id.'/edit')}}" class="btn hor-grd btn-grd-success">Edit</a>
 
                             <a  href="{{url('/tno/'.$data->id)}}" class="btn hor-grd btn-grd-danger">Delete</a>
@@ -107,12 +109,7 @@
 <script type="text/javascript" src="{{ asset('admin') }}/files/bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
 
 <script src="{{ asset('admin') }}/files/assets/pages/data-table/js/data-table-custom.js"></script>
-<script src="{{ asset('admin') }}/files/assets/js/pcoded.min.js"></script>
-<script src="{{ asset('admin') }}/files/assets/js/vartical-layout.min.js"></script>
-<script src="{{ asset('admin') }}/files/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script type="text/javascript" src="{{ asset('admin') }}/files/assets/js/script.js"></script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}

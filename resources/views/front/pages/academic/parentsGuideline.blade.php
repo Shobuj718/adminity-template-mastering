@@ -33,14 +33,16 @@
             </tr>
         </thead>
         <tbody>
-           <tr>
-                <td>1</td>
-                <td><a href="{{ asset('/uploads/information/2018 Vacation Notice .pdf') }}" target="_blank" >This is title for parent guideline</a></td>
-                <td>This is details for parent guideline</td>
-                <td>15-15-15</td>
-                <td><a href="{{ asset('/uploads/information/2018 Vacation Notice .pdf') }}" target="_blank" ><img class="vacancy img-center" src="uploads/tnoImage/Md Rakib Hasanasdf-1547620150.green-nature-wallpaper.jpg"  alt="No Image" /></td>
+           <?php $i=0; ?>
+        @foreach($data as $result)
+            <tr>
+                <td><?php echo ++$i; ?></td>
+                <td><a href="javascript:void(0)" target="_blank" >{{ $result->guideline }}</a></td>
+                <td>{{ $result->details }}</td>
+                <td>{{ $result->created_at->format('Y-m-d') }}</td>
+                <td><a href="javascript:void(0)" target="_blank" ><img class="vacancy img-center" src="{{url($result->image ? $result->image : '')}}"  alt="No Image" /></td>
             </tr>
-                    
+        @endforeach    
 
         </tbody>
     </table>
