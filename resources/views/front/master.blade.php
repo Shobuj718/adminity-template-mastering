@@ -60,9 +60,6 @@
 <!-- rightMenu starts-->
 
 
- 
-
-
 <!-- footer starts-->
 
     @include('front.includes.footer')

@@ -13,8 +13,11 @@ class SubCategoryController extends Controller
 {
     public function index()
 	{
-		$subcategory = Subcategory::all();
-		
+		//$subcategory = Subcategory::all();
+		$subcategory = DB::table('categories')
+                ->join('subcategories', 'categories.id', '=', 'subcategories.category_id')
+                ->select('subcategories.*', 'categories.category')
+                ->get();
 		
 		return view('admin.pages.subcategory.all', compact('subcategory'));
 	}
@@ -47,13 +50,14 @@ class SubCategoryController extends Controller
     public function edit($id)
     {
         $category = Category::all();
- 		$event = Subcategory::where('id',$id)->first();
+ 		$subcategory = Subcategory::where('id',$id)->first();
     	return view('admin.pages.subcategory.edit', compact('category','subcategory'));
     }
 
     public function update(Request $request, $id)
     {
-        $data = Subcategory::where('id' $id)->first();
+        //dd($request->all());
+        $data = Subcategory::where('id', $id)->first();
         $this->validation($request);
 
         try {
@@ -74,7 +78,7 @@ class SubCategoryController extends Controller
     public function delete($id)
     {
 
-        $data = Subcategory::where('id', $id)->delete();
+        Subcategory::where('id', $id)->delete();
 
         Session::Flash('error', 'Data Deleted Successfully !!!');
         return redirect()->back();

@@ -16,8 +16,5 @@ class Subcategory extends Model
     	'subcategory', 'category_id', 'sub_title'
     ];
 
-     public function category()
-    {
-    	return $this->hadMany(Category::class);
-    }
+    
 }

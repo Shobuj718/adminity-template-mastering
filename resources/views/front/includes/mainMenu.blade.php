@@ -1,10 +1,19 @@
+
+<style type="text/css">
+  .asas{
+    height: 100px;
+    width: 1140px;
+  }
+  </style>
+
 <section id="navArea" class="header-wrapper sticky">
     <nav class="navbar navbar-inverse  " role="navigation" style="background-color:#202C45 !important">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
       </div>
       <div id="navbar" class="navbar-collapse collapse header-wrapper">
-        <ul class="nav navbar-nav main_nav ">
+      <!-- for automaticaly show sub menu add <ul class="nav navbar-nav main_nav "> -->
+        <ul class="navbar-nav main_nav ">
           <li class="active"><a href="{{ url('/') }}"><span class="fa fa-home desktop-home"></span><span class="mobile-show">Home</span></a></li>
 
            <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">At a glance</a>
@@ -14,7 +23,7 @@
                 <li><a href="{{ url('/teacherinfo') }}">Teacher Information</a></li>
                 <li><a href="{{ url('/studentinfo') }}">Student Information</a></li>
                 <li><a href="{{ url('/employeeinfo') }}">Employe Information</a></li>
-              <li><a href="{{ url('/assetinfo') }}">Assets</a></li>
+              <li><a href="{{ url('/assets') }}">Assets</a></li>
             </ul>
           </li>
 
@@ -32,7 +41,7 @@
                 <div class="col-md-5">
                   <li><a href="{{ url('/schoollaw') }}">School Law</a></li>
                   <li><a href="{{ url('/goalpurpose') }}">Goal & Purpose</a></li>
-                  <li><a href="{{ url('/achievment') }}"> Achievement ও Success</a></li>
+                  <li><a href="{{ url('/achievment') }}"> Achievement & Success</a></li>
                   <li><a href="{{ url('/infrastructure') }}">Physical infrastructure</a></li>
                 </div>
               </div>
@@ -107,7 +116,7 @@
           <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admission</a>
             <ul class="dropdown-menu" role="menu">
             <li><a href="{{ url('/admissionNotice') }}">Admission Notice</a></li>
-            <li><a href="{{ url('/login') }}">Apply Online </a></li>
+            <li><a href="{{ url('/onlineApply') }}"> Online Apply</a></li>
                 <li><a href="{{ url('/admissionGuideline') }}">Admission Guidelines</a></li>
                 <li><a href="{{ url('/admissionResult') }}">Admission Results</a></li>
               <li><a href="{{ url('/feesPayment') }}">Fees & Payments</a></li>
@@ -141,12 +150,38 @@
               <li class="twitter"><a href="javascript:void(0);"></a></li>
               <li class="googleplus"><a href="javascript:void(0);"></a></li>
               <li class="youtube"><a href="javascript:void(0);"></a></li>
-              <li class="pinterest"><a href="#"></a></li> 
-              <li class="vimeo"><a href="#"></a></li>
-              <li class="mail"><a href="#"></a></li>
+              <li class="pinterest"><a href="javascript:void(0);"></a></li> 
+              <li class="vimeo"><a href="javascript:void(0);"></a></li>
+              <li class="mail"><a href="javascript:void(0);"></a></li>
             </ul>
           </div>
         </div>
+
+      
       </div>
     </div>
+
+    <!-- start add option -->
+
+    <div class="row">
+      
+      <div class="col-lg-12 col-md-1 col-sm-12">
+
+          <div class="slick_slider">
+       
+                            
+                <div class=""> 
+
+                  <a href="http://ehsannews.com/" target="_blank"> <img class="asas" src="{{ asset('front') }}/images/green.jpg" alt=""></a>
+                  
+                </div>
+               
+            
+        </div>
+      </div>
+    </div>
+
+    <!-- end add option -->
+
   </section>
+

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Asset;
 use App\Ataglance;
 use Illuminate\Http\Request;
 
@@ -32,9 +33,9 @@ class AtaglanceController extends Controller
     	$ataglance = Ataglance::paginate(20);
     	return view('front.pages.ataglance.employeeinfo', compact('ataglance'));
     }
-    public function assetinfo()
+    public function assets()
     {
-    	$ataglance = Ataglance::all();
-    	return view('front.pages.ataglance.assetinfo', compact('ataglance'));
+    	$asset = Asset::all();
+    	return view('front.pages.ataglance.assets', compact('asset'));
     }
 }

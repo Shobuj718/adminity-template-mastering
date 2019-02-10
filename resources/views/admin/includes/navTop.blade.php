@@ -1,12 +1,14 @@
+
+
 <div class="navbar-logo">
-<a class="mobile-menu" id="mobile-collapse" href="#!">
-<i class="feather icon-menu"></i>
+<a class="mobile-menu" id="mobile-collapse" href="#">
+<span class="glyphicon glyphicon-th-list"></span>
 </a>
 <a href="{{ url('/home') }}">
 Ehsan Software
 <a class="mobile-options">
-<i class="feather icon-more-horizontal"></i>
 </a>
+
 </div>
 <div class="navbar-container container-fluid">
 <ul class="nav-left">

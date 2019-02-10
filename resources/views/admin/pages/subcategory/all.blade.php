@@ -45,8 +45,8 @@
 				<thead>
 					<tr>
 						<th>Sl.</th>
-						<th>Sub Category Name</th>
 						<th>Category Name</th>
+						<th>Sub Category Name</th>
 						<th>Sub Category Title</th>
 						<th>Action</th>
 					</tr>
@@ -57,8 +57,8 @@
 
 					<tr>
 						<td><?php echo ++$i; ?></td>
-						<td>{{ $data->subcategory }}</td>
 						<td>{{ $data->category }}</td>
+						<td>{{ $data->subcategory }}</td>
 						<td>{{ $data->sub_title }}</td>
 
 						<td>
@@ -74,8 +74,8 @@
 				<tfoot>
 					<tr>
 						<th>Sl.</th>
-						<th>Sub Category Name</th>
 						<th>Category Name</th>
+						<th>Sub Category Name</th>
 						<th>Sub Category Title</th>
 						<th>Action</th>
 					</tr>

@@ -12,16 +12,76 @@
 
 
 @section('main-content')
-	   <div class="slick_slider">
+<div class="row">
+
+<!-- start add option -->
+  <div class="col-md-2">
+
+     <div class="slick_slider">
+     
+                          
+              <div class="single_iteam"> 
+                <a href="http://ehsannews.com/" target="_blank"> <img src="{{ asset('front') }}/images/green4.jpg" alt=""></a>
+                
+              </div>
+             
+          
+        </div>
+  </div>
+  <!-- end add option -->
+
+  <div class="col-md-8">
+
+     <div class="slick_slider">
      
         @foreach($slider as $data)
-          <div class="single_iteam"> <a href="#"> <img src="{{url($data->image ? $data->image : '')}}" alt=""></a>
+            
+              
+              <div class="single_iteam"> <a href="#"> <img src="{{url($data->image ? $data->image : '')}}" alt=""></a>
                 <div class="slider_article">
                 </div>
               </div>
+             
         @endforeach
           
         </div>
+  </div>
+
+  <!-- start add option -->
+  <div class="col-md-2">
+
+	   <div class="slick_slider">
+     
+                          
+              <div class="single_iteam"> 
+
+                <a href="http://ehsannews.com/" target="_blank"> <img src="{{ asset('front') }}/images/green3.jpg" alt=""></a>
+                
+              </div>
+             
+          
+        </div>
+  </div>
+  <!-- end add option -->
+
+</div>
+<div class="row">
+      
+    <div class="col-lg-12 col-md-1 col-sm-12">
+        <div class="slick_slider">
+     
+                          
+              <div class=""> 
+                <!-- <a href="http://ehsannews.com/" target="_blank"> <img src="{{url($data->image ? $data->image : '')}}" alt=""></a> -->
+
+                <a href="http://ehsannews.com/" target="_blank"> <img class="asas" src="{{ asset('front') }}/images/green.jpg" alt=""></a>
+                
+              </div>
+             
+          
+        </div>
+      </div>
+    </div>
 
 		<div class="left_content">
           <div class="single_page">
@@ -93,6 +153,24 @@
                          
             </div>
             </div>
+
+        <!-- start add option -->
+        <div class="col-lg-12 col-md-1 col-sm-12">
+          <h3>This is add option title name </h3>
+            <div class="slick_slider">
+         
+                              
+                  <div class=""> 
+
+                    <a href="http://ehsannews.com/" target="_blank"> <img class="asas" src="{{ asset('front') }}/images/green4.jpg" alt=""></a>
+                    
+                  </div>
+                 
+              
+            </div>
+        </div>
+        <!-- end add option -->
+
             </div>
             
             

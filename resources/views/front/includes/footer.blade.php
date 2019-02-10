@@ -21,20 +21,20 @@
       <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-4">
           <div class="footer_widget wow fadeInLeftBig" style="float:0;">
-            <h2>স্কুল ছবি </h2>
+            <h2>School Image </h2>
             <ul class="tag_nav">
-              <li><a href="{{ url('/photoGallery') }}">ফটো গ্যালারী </a></li>
-              <li><a href="{{ url('/videoGallery') }}">ভিডিও গ্যালারী</a></li>
+              <li><a href="{{ url('/photoGallery') }}">Photo Galler </a></li>
+              <li><a href="{{ url('/videoGallery') }}">Video Gallery</a></li>
              
             </ul>
           </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
           <div class="footer_widget wow fadeInDown">
-            <h2>গুরুত্বপূর্ণ লিংকস</h2>
+            <h2>Important Link</h2>
             <ul class="tag_nav">
-              <li><a href="javascript:void(0)">শিক্ষা অধিদপ্তর</a></li>
-              <li><a href="javascript:void(0)">ঢাকা শিক্ষা বোর্ড </a></li>
+              <li><a href="javascript:void(0)">Ministry of Education</a></li>
+              <li><a href="javascript:void(0)">Secondary and Higher Education Department </a></li>
               
              
             </ul>
@@ -42,10 +42,10 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
           <div>
-            <h3>যোগাযোগঃ</h2>
-            <p>   বগুড়া সদর, জেলাঃ বগুড়া। </p>
+            <h3>Contact</h2>
+            <p>   Bogura Sadar, Zilla: Bogura. </p>
             <address>
-             মোবাইলঃ 0123456789  <br> ইমেইলঃ example@gmail.com
+             Mobile: 0123456789  <br> Email: example@gmail.com
             </address>
           </div>
         </div>

@@ -30,34 +30,6 @@ Route::get('/inputcharcount', 'FrontController@inputcharcount');
 Route::get('/contact', 'ContactController@contact');
 Route::post('/contact/store', 'ContactController@store');
 
-/*
- ===============================================================================
-    Category route
- ===============================================================================
- */
-Route::group(['middleware' => 'auth', 'prefix' => 'category'], function(){
-    Route::get('/all', 'CategoryController@index');
-    Route::get('/add', 'CategoryController@add');
-    Route::post('/store', 'CategoryController@store');
-    Route::get('/{id}/edit', 'CategoryController@edit');
-    Route::post('/update/{id}', 'CategoryController@update');
-    Route::get('/delete/{id}', 'CategoryController@delete');
-});
-/*
- ===============================================================================
-   Sub Category route
- ===============================================================================
- */
-Route::group(['middleware' => 'auth', 'prefix' => 'subcategory'], function(){
-    Route::get('/all', 'SubCategoryController@index');
-    Route::get('/add', 'SubCategoryController@add');
-    Route::post('/store', 'SubCategoryController@store');
-    Route::get('/{id}/edit', 'SubCategoryController@edit');
-    Route::post('/update/{id}', 'SubCategoryController@update');
-    Route::get('/delete/{id}', 'SubCategoryController@delete');
-});
-
-
  /*
  ===============================================================================
     at a glance all menu route(front end)
@@ -69,7 +41,7 @@ Route::get('/governingcouncil', 'AtaglanceController@governingcouncil');
 Route::get('/managingcommitee', 'AtaglanceController@managingcommitee');
 Route::get('/studentinfo', 'AtaglanceController@studentinfo');
 Route::get('/employeeinfo', 'AtaglanceController@employeeinfo');
-Route::get('/assetinfo', 'AtaglanceController@assetinfo');
+Route::get('/assets', 'AtaglanceController@assets');
 
 /*
  ===============================================================================
@@ -146,7 +118,10 @@ Route::get('/videoGallery', 'AcademicFrontController@videoGallery');
  Route::get('/admissionGuideline', 'AdmissionFrontController@admissionGuideline');
  Route::get('/admissionResult', 'AdmissionFrontController@admissionResult');
  Route::get('/feesPayment', 'AdmissionFrontController@feesPayment');
-
+ Route::get('/onlineApply', 'AdmissionFrontController@onlineApply');
+ Route::post('/admission/store', 'AdmissionFrontController@admission');
+/* Route::post('/printApplyForm', 'AdmissionFrontController@printApplyForm');
+*/
 
 /*
  ===============================================================================
@@ -156,7 +131,9 @@ Route::get('/videoGallery', 'AcademicFrontController@videoGallery');
  ===============================================================================
  */
 
-Route::get('/applyOnline', 'AdmissionBackendController@applyOnline');
+/*Route::get('/applyOnline', 'AdmissionBackendController@applyOnline');
+Route::get('/showDetails', 'AdmissionBackendController@showDetails');
+Route::get('/admissionRegister', 'AdmissionBackendController@admissionRegister');*/
 
 /*
 	TNO  Route
@@ -164,6 +141,61 @@ Route::get('/applyOnline', 'AdmissionBackendController@applyOnline');
 Route::resource('tno', 'TnoController');
 //Route::resource('tno/all', 'TnoController@index');
 Route::resource('tno/emailcheck', 'TnoController@emailcheck');
+
+
+
+/*
+   School Assets route
+*/
+Route::group(['middleware' => 'auth', 'prefix' => 'assets'], function(){
+    Route::get('/all', 'AssetsController@index');
+    Route::get('/add', 'AssetsController@add');
+    Route::post('/store', 'AssetsController@store');
+    Route::get('/{id}/edit', 'AssetsController@edit');
+    Route::post('/update/{id}', 'AssetsController@update');
+    Route::get('/delete/{id}', 'AssetsController@delete');
+});
+
+
+/*
+ ===============================================================================
+    Category route
+ ===============================================================================
+ */
+Route::group(['middleware' => 'auth', 'prefix' => 'category'], function(){
+    Route::get('/all', 'CategoryController@index');
+    Route::get('/add', 'CategoryController@add');
+    Route::post('/store', 'CategoryController@store');
+    Route::get('/{id}/edit', 'CategoryController@edit');
+    Route::post('/update/{id}', 'CategoryController@update');
+    Route::get('/delete/{id}', 'CategoryController@delete');
+});
+/*
+ ===============================================================================
+   Sub Category route
+ ===============================================================================
+ */
+Route::group(['middleware' => 'auth', 'prefix' => 'subcategory'], function(){
+    Route::get('/all', 'SubCategoryController@index');
+    Route::get('/add', 'SubCategoryController@add');
+    Route::post('/store', 'SubCategoryController@store');
+    Route::get('/{id}/edit', 'SubCategoryController@edit');
+    Route::post('/update/{id}', 'SubCategoryController@update');
+    Route::get('/delete/{id}', 'SubCategoryController@delete');
+});
+/*
+ ===============================================================================
+   Sub Category route
+ ===============================================================================
+ */
+Route::group(['middleware' => 'auth', 'prefix' => 'importanlink'], function(){
+    Route::get('/all', 'ImportantLinkController@index');
+    Route::get('/add', 'ImportantLinkController@add');
+    Route::post('/store', 'ImportantLinkController@store');
+    Route::get('/{id}/edit', 'ImportantLinkController@edit');
+    Route::post('/update/{id}', 'ImportantLinkController@update');
+    Route::get('/delete/{id}', 'ImportantLinkController@delete');
+});
 
 
 
@@ -395,3 +427,14 @@ Route::group(['middleware' => 'auth', 'prefix' => 'volunteer'], function(){
 
 
 
+/*
+   Admission management route
+*/
+Route::group(['middleware' => 'auth', 'prefix' => 'admission'], function(){
+    Route::get('/all', 'AdmissionBackendController@admissionManagement');
+    Route::get('/show/{id}', 'AdmissionBackendController@show');
+    Route::get('/{id}/edit', 'AdmissionBackendController@edit');
+    Route::get('/update/{id}/{status}', 'AdmissionBackendController@update');
+    Route::get('/delete/{id}', 'AdmissionBackendController@delete');
+    
+});

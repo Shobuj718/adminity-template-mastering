@@ -51,13 +51,33 @@
 				<span class="pcoded-mtext">Employee Info</span>
 			</a>
 		</li>
+
+		<li class="pcoded-hasmenu ">
+			<a href="javascript:void(0)">
+				<span class="pcoded-mtext">Assets</span>
+			</a>
+			<ul class="pcoded-submenu">
+				<li class="">
+					<a href="{{url('/assets/add')}}">
+						<span class="pcoded-mtext">Add Assets</span>
+					</a>
+				</li>
+			</ul>
+			<ul class="pcoded-submenu">
+				<li class="">
+					<a href="{{ url('/assets/all') }}">
+						<span class="pcoded-mtext">All Assets</span>
+					</a>
+				</li>
+			</ul>
+		</li>
+
 	</ul>
 </li>
 	
-	<!-- about use menu  -->
 
-<div class="pcoded-navigatio-lavel">Other</div>
-
+<!-- <div class="pcoded-navigatio-lavel">Other</div>
+ -->
 <ul class="pcoded-item pcoded-left-item">
 	<li class="pcoded-hasmenu ">
 		<a href="javascript:void(0)">
@@ -94,6 +114,8 @@
 		</ul>
 	</li>
 </ul>
+
+
 
 <ul class="pcoded-item pcoded-left-item">
 	<li class="pcoded-hasmenu ">
@@ -644,6 +666,28 @@
 		</ul>
 	</li>
 </ul>
+<ul class="pcoded-item pcoded-left-item">
+	<li class="pcoded-hasmenu ">
+		<a href="javascript:void(0)">
+			<span class="pcoded-micon"><i class="feather icon-list"></i></span>
+			<span class="pcoded-mtext">Important Links</span>
+		</a>
+		<ul class="pcoded-submenu">
+			<li class="">
+				<a href="{{ url('/importanlink/add') }}">
+					<span class="pcoded-mtext">Add Important Link</span>
+				</a>
+			</li>
+		</ul>
+		<ul class="pcoded-submenu">
+			<li class="">
+				<a href="{{ url('/importanlink/all') }}">
+					<span class="pcoded-mtext">All Important Link</span>
+				</a>
+			</li>
+		</ul>
+	</li>
+</ul>
 	
 <ul class="pcoded-item pcoded-left-item">
 	<li class="pcoded-hasmenu ">
@@ -653,13 +697,16 @@
 		</a>
 		<ul class="pcoded-submenu">
 			<li class="">
-				<a href="{{ url('/applyOnline') }}">
+				<a href="{{ url('/admission/all') }}">
 					<span class="pcoded-mtext">Apply Online</span>
 				</a>
 			</li>
 		</ul>
 	</li>
 </ul>
+
+
+
 
 
 

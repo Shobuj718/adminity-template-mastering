@@ -1,6 +1,6 @@
 @extends('admin.master')
 
-@section('page-title', 'Update Event Information ')
+@section('page-title', 'Update Sub Category ')
 
 @section('header-section')
 
@@ -32,7 +32,7 @@
 
 			<div class="card">
 				<div class="card-header">
-					<h2 style="text-align:center">Update Event Information</h2>
+					<h2 style="text-align:center">Update Sub Category</h2>
 				
 					@if(Session::has('error'))
 			            @include('admin.includes.errors')
@@ -44,37 +44,52 @@
 		        </div>
 
 				<div class="card-block">
-					<form  method="post"  action="{{url('/eventInfo/update/'.$event->id)}}" enctype="multipart/form-data">
+					<form  method="post"  action="{{url('/subcategory/update/'.$subcategory->id)}}" enctype="multipart/form-data">
 					{{csrf_field()}}
-						<div class="form-group {{ $errors->has('event_name') ? 'has-error' : '' }} row">
-							<label class="col-sm-2 col-form-label">Event Name</label>
+						<div class="form-group {{ $errors->has('subcategory') ? 'has-error' : '' }} row">
+							<label class="col-sm-2 col-form-label">Sub Category Name</label>
 
 							<div class="col-sm-10 ">
-								<input type="text" value="{{ $event->event_name }}" class="form-control" name="event_name" id="event_name" placeholder="Enter event name   ">
+								<input type="text" value="{{ $subcategory->subcategory }}" class="form-control" name="subcategory" id="subcategory" placeholder="Enter sub category name   ">
 
 
-						@if($errors->has('event_name'))
+						@if($errors->has('subcategory'))
 									<span class="help-block">
-										<strong>{{ $errors->first('event_name') }}</strong>
+										<strong>{{ $errors->first('subcategory') }}</strong>
 									</span>
 								@endif
 							</div>
 						</div>
 
-							<div class="form-group {{ $errors->has('event_cat_id') ? 'has-error' : '' }} row">
-							<label class="col-sm-2 col-form-label">Event Category</label>
+						<div class="form-group {{ $errors->has('category_id') ? 'has-error' : '' }} row">
+							<label class="col-sm-2 col-form-label">Category Name</label>
 
 							<div class="col-sm-10 ">
-								<select class="js-example-basic-single col-sm-12" name="event_cat_id" id="event_cat_id">
+								<select class="js-example-basic-single col-sm-12" name="category_id" id="category_id">
 									
-										@foreach($events as $data)
+										@foreach($category as $data)
 											<option value="{{$data->id}}">{{ $data->category }}</option>
 										@endforeach
 								</select>
 
-						@if($errors->has('event_cat_id'))
+						@if($errors->has('category_id'))
 									<span class="help-block">
-										<strong>{{ $errors->first('event_cat_id') }}</strong>
+										<strong>{{ $errors->first('category_id') }}</strong>
+									</span>
+								@endif
+							</div>
+						</div>
+
+						<div class="form-group {{ $errors->has('sub_title') ? 'has-error' : '' }} row">
+							<label class="col-sm-2 col-form-label">Sub Category Title</label>
+
+							<div class="col-sm-10 ">
+								<input type="text" value="{{ $subcategory->sub_title }}" class="form-control" name="sub_title" id="sub_title" placeholder="Enter sub category title name   ">
+
+
+						@if($errors->has('sub_title'))
+									<span class="help-block">
+										<strong>{{ $errors->first('sub_title') }}</strong>
 									</span>
 								@endif
 							</div>
@@ -82,28 +97,6 @@
 
 						<br>
 
-						<div class="form-group {{$errors->has('details') ? 'has-error' : '' }} row">
-							<label class="col-sm-2 col-form-label">Event Details</label>
-							<div class="col-sm-10">
-								<textarea rows="5" cols="5" name="details" class="form-control"  placeholder="Enter event details ">{{ $event->details }}</textarea>
-								@if($errors->has('details'))
-									<span class="help-block">
-										<strong>{{ $errors->first('details') }}</strong>
-									</span>
-								@endif
-							</div>
-						</div>
-
-						<div class="form-group row">
-							<label class="col-sm-2 col-form-label">Image Upload</label>
-							<div class="col-sm-10">
-								<input type="file" name="image" class="form-control" onchange="readURL(this);">
-								<img class="img-responsive" src="{{url($event->image ? $event->image : '')}}" width="80px" height="80px" alt="No Image">
-							</div>
-						</div>
-
-						
-					
 						<div class="form-group row">
 							<label class="col-sm-2"></label>
 							<div class="col-sm-10">
@@ -149,7 +142,7 @@
         }
 </script>
 <script type="text/javascript">
-	document.getElementById('event_cat_id').value = "{{$event->event_cat_id}}"
+	document.getElementById('category_id').value = "{{$subcategory->category_id}}"
 </script>
 
 @endsection

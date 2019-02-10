@@ -146,9 +146,7 @@
 .single_sidebar > h2 {
   padding: 0px 0px;
 }
-.single_sidebar > h2 span {
-  padding: 0px 111px;
-}
+
 .gogglecolor > h2 span {
   padding: 0px 134px;
 }

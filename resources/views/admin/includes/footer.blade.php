@@ -21,4 +21,20 @@
 <script type="text/javascript" src="{{ asset('admin') }}/files/assets/pages/dashboard/custom-dashboard.js"></script>
 <script type="text/javascript" src="{{ asset('admin') }}/files/assets/js/script.min.js"></script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script> 
+
+
+
+<script type="text/javascript" src="{{ asset('admin') }}/files/bower_components/modernizr/js/modernizr.js"></script>
+
+
+<script src="{{ asset('admin') }}/files/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
