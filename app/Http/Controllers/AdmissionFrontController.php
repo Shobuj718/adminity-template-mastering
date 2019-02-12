@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
 use App\Admission;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -41,8 +42,9 @@ class AdmissionFrontController extends Controller
 
         try {
 
-            $data = $request->except('image');
+            $data = $request->except('image', 'apply_id');
             $data['image'] = $this->image;
+            $data['apply_id'] = rand(100000000, 999999999);
             //dd($data['image']);
             $data= Admission::create($data);    
             //dd($data);
@@ -50,8 +52,15 @@ class AdmissionFrontController extends Controller
             $request->put('admission', $admission); */       
            //Session::push('admission', $admission);     
             
-            Session::Flash('success', 'Admission successfully ');
-            return view('front.pages.admission.printApplyForm', compact('data'));
+            //Session::Flash('success', 'Admission successfully ');
+            //return view('front.pages.admission.printApplyForm', compact('data'));
+
+            $file = view('front.pages.admission.applyForm', compact('data'));
+            $pdf = PDF::loadHtml($file);
+
+
+
+            return $pdf->stream('shobuj.pdf');
 
             
         } catch (\Exception $e) {           
@@ -60,11 +69,21 @@ class AdmissionFrontController extends Controller
         }
     }
 
-    /*public function printApplyForm($id)
+
+    public function admitCardSearch()
     {
-        $admission = Admission::find($id);
-        return view('front.pages.admission.printApplyForm', compact('admission'));
-    }*/
+        return view('front.pages.admission.admitCardSearch');
+    }
+
+    public function admitCardDownload(Request $request)
+    {
+        $data = Admission::where('apply_id',$request->id)->first();
+      
+       $file =  view('front.pages.admission.applyForm', compact('data'));
+        $pdf = PDF::loadHtml($file);
+        return $pdf->stream('shobuj.pdf');
+
+    }
 
     public function validation(Request $data)
     {
@@ -98,4 +117,21 @@ class AdmissionFrontController extends Controller
         }
         return false;
     }
+
+    public function generatePDF()
+
+        {
+
+            $data = ['title' => 'Welcome to Shobuj Islam for Apply in this school'];
+            $data = Admission::find(1)->get();
+
+            //$pdf = PDF::loadView('myPDF', $data);
+            $file = view('front.pages.admission.applyForm', compact('data'));
+            $pdf = PDF::loadHtml($file);
+
+
+
+            return $pdf->stream('shobuj.pdf');
+
+        }
 }

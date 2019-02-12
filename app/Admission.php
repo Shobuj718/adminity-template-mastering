@@ -12,6 +12,6 @@ class Admission extends Model
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
-    	'name', 'department', 'class', 'gender', 'religion', 'birthDate', 'mobile', 'address', 'father', 'father_occupation', 'mother', 'mother_occupation', 'payment', 'amount', 'status', 'trxid', 'image',
+    	'name', 'apply_id', 'class', 'gender', 'department', 'religion', 'birthDate', 'mobile', 'address', 'father', 'father_occupation', 'mother', 'mother_occupation', 'payment', 'amount', 'status', 'trxid', 'image',
     ];
 }

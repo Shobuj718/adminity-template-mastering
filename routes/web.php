@@ -120,8 +120,11 @@ Route::get('/videoGallery', 'AcademicFrontController@videoGallery');
  Route::get('/feesPayment', 'AdmissionFrontController@feesPayment');
  Route::get('/onlineApply', 'AdmissionFrontController@onlineApply');
  Route::post('/admission/store', 'AdmissionFrontController@admission');
-/* Route::post('/printApplyForm', 'AdmissionFrontController@printApplyForm');
-*/
+ Route::get('/admitCard', 'AdmissionFrontController@admitCardSearch');
+ Route::post('/admitCardDownload', 'AdmissionFrontController@admitCardDownload');
+
+
+Route::get('/generate-pdf','AdmissionFrontController@generatePDF');
 
 /*
  ===============================================================================

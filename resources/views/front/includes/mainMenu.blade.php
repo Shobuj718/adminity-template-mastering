@@ -117,6 +117,7 @@
             <ul class="dropdown-menu" role="menu">
             <li><a href="{{ url('/admissionNotice') }}">Admission Notice</a></li>
             <li><a href="{{ url('/onlineApply') }}"> Online Apply</a></li>
+            <li><a href="{{ url('/admitCard') }}"> Download Admit Card</a></li>
                 <li><a href="{{ url('/admissionGuideline') }}">Admission Guidelines</a></li>
                 <li><a href="{{ url('/admissionResult') }}">Admission Results</a></li>
               <li><a href="{{ url('/feesPayment') }}">Fees & Payments</a></li>

@@ -6,10 +6,6 @@
 <title>Ehsan School Management website control panel </title>
 
 
-<!--[if lt IE 10]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-      <![endif]-->
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
@@ -53,57 +49,96 @@
 <div class="container">
 <div class="row">
 <div class="col-sm-12">
-<form method="POST" class="md-float-material form-material" action="{{ route('login') }}">
-    @csrf
-<!-- <div class="text-center">
-<img src="{{ asset('admin') }}/files/assets/images/logo.png" alt="logo.png">
-</div> -->
-<div class="auth-box card">
-<div class="card-block">
-<div class="row m-b-20">
-<div class="col-md-12">
-<h3 class="text-center">Sign In</h3>
+ <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+
+                <h3 style="padding-top:22px;" class="text-center">Register</h3>
+
+                <div class="card-body">
+                    <form method="POST" action="{{ route('register') }}">
+                        @csrf
+
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+
+                                @if ($errors->has('name'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+                                @if ($errors->has('email'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="mobile" class="col-md-4 col-form-label text-md-right">{{ __('Mobile') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="mobile" type="mobile" class="form-control{{ $errors->has('mobile') ? ' is-invalid' : '' }}" name="mobile" value="{{ old('mobile') }}" required>
+
+                                @if ($errors->has('mobile'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('mobile') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Register') }}
+                                </button>
+                                
+                                    <a class="btn btn-info" href="{{url('/login')}}">Login</a>
+                                
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-</div>
-<div class="form-group form-primary">
-<input type="text" name="email" class="form-control" required="" placeholder="Your Email Address">
-<span class="form-bar"></span>
-</div>
-<div class="form-group form-primary">
-<input type="password" name="password" class="form-control" required="" placeholder="Password">
- <span class="form-bar"></span>
-</div>
-<div class="row m-t-25 text-left">
-<div class="col-12">
-<div class="checkbox-fade fade-in-primary d-">
-<!-- <label>
-<input type="checkbox" value="">
-<span class="cr"><i class="cr-icon icofont icofont-ui-check txt-primary"></i></span>
-<span class="text-inverse">Remember me</span>
-</label> -->
-</div>
-<div class="forgot-phone text-right f-right">
-<!-- <a href="{{ url('/') }}" class="text-right f-w-600"> Forgot Password?</a> -->
-</div>
-</div>
-</div>
-<div class="row m-t-30">
-<div class="col-md-12">
-<button type="submit" class="btn btn-primary btn-md btn-block waves-effect waves-light text-center m-b-20">Sign in</button>
-</div>
-</div>
-<hr />
-<div class="row">
-<div class="col-md-10">
-<p class="text-inverse text-left"><a href="{{ url('/register') }}"><b class="f-w-600">Register Here</b></a></p>
-</div>
-<div class="col-md-2">
-<img src="{{ asset('admin') }}/files/assets/images/auth/Logo-small-bottom.png" alt="small-logo.png">
-</div>
-</div>
-</div>
-</div>
-</form>
 
 </div>
 
